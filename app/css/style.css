@@ -1,0 +1,52 @@
+h1 {
+  text-align: center;
+}
+#search {
+  width: 100%;
+  padding: 10px 0 10px 0;
+  float: left;
+}
+#search form {
+  *zoom: 1;
+  display: block;
+  margin: 0 auto;
+  width: 500px;
+}
+#search form:before,
+#search form:after {
+  content: '';
+  display: table;
+}
+#search form:after {
+  clear: both;
+}
+.results {
+  width: 100%;
+  *zoom: 1;
+}
+.results:before,
+.results:after {
+  content: '';
+  display: table;
+}
+.results:after {
+  clear: both;
+}
+.footballer {
+  width: 250px;
+  padding: 10px;
+  float: left;
+  -webkit-box-shadow: 0px 0px 6px 2px #ccc;
+  box-shadow: 0px 0px 6px 2px #ccc;
+  margin: 10px;
+  text-align: center;
+}
+.footballer .photo {
+  border: 1px solid #000;
+  background: #ccc;
+  margin: 0 0 10px 0;
+}
+.footballer .name {
+  width: 100%;
+  text-align: center;
+}

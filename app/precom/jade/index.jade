@@ -13,17 +13,17 @@ html(lang=es)
 	body
 		.container
 			h1 Footballer
-			form#register
-				.form-group
-					label(for='name') Nombre
-					input#name.form-control(name='name', type='text', placeholder='Ingrese su nombre')
-				.form-group
-					label(for='email') Email
-					input#email.form-control(name='email', type='email', placeholder='Ingrese su email')
-				.form-group
-					label(for='message') Mensaje
-					textarea#message.form-control(name='message', placeholder='Ingrese su mensaje' rows='3')
-				input.btn.btn-default(type='submit', value='Enviar')
+			#search
+				form
+					.input-group
+						input.form-control(name="name", placeholder="Buscar")
+						span.input-group-btn
+							button.btn.btn-default(type="button") Buscar
+			.results
+				- for(var i=0; i<6; i++)
+					.footballer
+						img.photo(width="200", height="300")
+						span.name Nombre de Jugador
 		script(src="bower_components/jquery/dist/jquery.min.js")
 		script(src="bower_components/jquery-validation/dist/jquery.validate.min.js")
 		script(src="js/script.js")

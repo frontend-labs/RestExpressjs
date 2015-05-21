@@ -41,6 +41,26 @@ Si deseas entender con mas profundida gulpjs, te recomiendo que leas el [siguien
 
 Para conocer un poco mas sobre jade, te recomiendo el siguiente [post](http://frontendlabs.io/70--jade-language-node-template-engine-and-html-preprocessor)
 
+# REST
+Para el ejemplo usaremos un rest local
+las Url son:
+
+http://localhost:4000/search/
+- Metodos: GET / POST
+
+http://localhost:4000/search/:name 
+- Metodos: DELETE / GET
+
+http://localhost:4000/footballer/:id
+- Metodos: GET
+
+http://localhost:4000/country/
+- Metodos: GET
+
+http://localhost:4000/country/:name
+- Metodos: GET
+
+
 
 # Tips
 - No te olvides de ignorar la carpeta bower_components y node_modules para no estar cargando todas las librerias.
