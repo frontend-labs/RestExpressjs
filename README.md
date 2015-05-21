@@ -51,4 +51,8 @@ Para conocer un poco mas sobre jade, te recomiendo el siguiente [post](http://fr
 - [coffee](http://coffeescript.org/)
 - [expressjs](http://expressjs.com/)
 - [bootstrap](http://getbootstrap.com/)
+- [mongodb driver nodejs](http://docs.mongodb.org/ecosystem/drivers/node-js/)
+- [mongoose](https://github.com/Automattic/mongoose)
+- [robomongo](http://robomongo.org/)
+- [instalar mongodb en mac](http://www.mkyong.com/mongodb/how-to-install-mongodb-on-mac-os-x/)
 

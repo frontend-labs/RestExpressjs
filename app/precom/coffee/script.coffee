@@ -1,4 +1,4 @@
-Skeletor = (($)->
+Footballer = (($)->
 	st =
 		'formRegister' : '#register'
 	dom = {}
