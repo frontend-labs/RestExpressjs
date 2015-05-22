@@ -15,24 +15,18 @@
     <div class="container">
       <h1>Footballer</h1>
       <div id="search">
-        <form>
+        <form id="formSearch">
           <div class="input-group">
-            <input name="name" placeholder="Buscar" class="form-control"><span class="input-group-btn">
-              <button type="button" class="btn btn-default">Buscar</button></span>
+            <input id="txtSearch" name="name" placeholder="Buscar" class="form-control"><span class="input-group-btn">
+              <button id="btnSearch" type="button" class="btn btn-default">Buscar</button></span>
           </div>
         </form>
       </div>
-      <div class="results">
-        <div class="footballer"><img width="200" height="300" class="photo"><span class="name">Nombre de Jugador</span></div>
-        <div class="footballer"><img width="200" height="300" class="photo"><span class="name">Nombre de Jugador</span></div>
-        <div class="footballer"><img width="200" height="300" class="photo"><span class="name">Nombre de Jugador</span></div>
-        <div class="footballer"><img width="200" height="300" class="photo"><span class="name">Nombre de Jugador</span></div>
-        <div class="footballer"><img width="200" height="300" class="photo"><span class="name">Nombre de Jugador</span></div>
-        <div class="footballer"><img width="200" height="300" class="photo"><span class="name">Nombre de Jugador</span></div>
-      </div>
+      <div class="results"></div>
     </div>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="bower_components/underscore/underscore-min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

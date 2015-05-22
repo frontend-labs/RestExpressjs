@@ -42,6 +42,8 @@ h1 {
   text-align: center;
 }
 .footballer .photo {
+  width: 200px;
+  height: 300px;
   border: 1px solid #000;
   background: #ccc;
   margin: 0 0 10px 0;

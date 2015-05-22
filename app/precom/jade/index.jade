@@ -14,16 +14,13 @@ html(lang=es)
 		.container
 			h1 Footballer
 			#search
-				form
+				form#formSearch
 					.input-group
-						input.form-control(name="name", placeholder="Buscar")
+						input#txtSearch.form-control(name="name", placeholder="Buscar")
 						span.input-group-btn
-							button.btn.btn-default(type="button") Buscar
+							button#btnSearch.btn.btn-default(type="button") Buscar
 			.results
-				- for(var i=0; i<6; i++)
-					.footballer
-						img.photo(width="200", height="300")
-						span.name Nombre de Jugador
 		script(src="bower_components/jquery/dist/jquery.min.js")
 		script(src="bower_components/jquery-validation/dist/jquery.validate.min.js")
+		script(src="bower_components/underscore/underscore-min.js")
 		script(src="js/script.js")

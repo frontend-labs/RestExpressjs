@@ -1,33 +1,51 @@
 Footballer = (($)->
 	st =
-		'formRegister' : '#register'
+		'formSearch' : '#formSearch'
+		'txtSearch' : '#txtSearch'
+		'btnSearch' : '#btnSearch'
+		'results' : '.results'
 	dom = {}
 	stForm =
 		'rules' :
 			'name' :
-				'required' 	:	true
+				'required'  :   true
 			'email' :
-				'required' 	:	true
-				'email' 	:	true
+				'required'  :   true
+				'email'     :   true
 			'message' :
-				'required' 	:	true
+				'required'  :   true
 		'messages' :
 			'name' :
-				'required' 	: 	'Campo obligatorio'
+				'required'  :   'Campo obligatorio'
 			'email' :
-				'required' 	: 	'Campo obligatorio'
-				'email'		:	'Formato Incorrecto'
+				'required'  :   'Campo obligatorio'
+				'email'     :   'Formato Incorrecto'
 			'message' :
-				'required' : 	'Campo obligatorio'
+				'required' :    'Campo obligatorio'
 	catchDom = ->
-		dom.formRegister = $(st.formRegister)
+		dom.formSearch = $(st.formSearch)
+		dom.txtSearch = $(st.txtSearch)
+		dom.btnSearch = $(st.btnSearch)
+		dom.results = $(st.results)
 		return
 	bindEvents = ->
-		dom.formRegister.validate(stForm)
+		dom.btnSearch.on('click', fnEvents.searchFootballer)
 		return
 	fnEvents =
-		startAction = ->
-			console.log 'show the code'
+		searchFootballer : (event)->
+			event.preventDefault()
+			valueTxtSearch = dom.txtSearch.val()
+			$.ajax(
+				'method' : 'get'
+				'url' : 'http://127.0.0.1:4000/search/'+valueTxtSearch
+				'success' : (data)->
+					console.log(data)
+					dom.results.html('<div class="footballer"><img class="photo" with="200" height="300" src="'+data.photo+'"><span class="name">'+data.name+' '+data.surname+'</span></div>')
+					return
+				'error' : (error)->
+					console.log (error)
+					return
+			)
 			return
 	init = ->
 		catchDom()
@@ -37,5 +55,6 @@ Footballer = (($)->
 )(jQuery)
 
 $(->
-	Skeletor.init()
+	Footballer.init()
+	console.log '333asdasd'
 )

@@ -1,9 +1,12 @@
-var Skeletor;
+var Footballer;
 
-Skeletor = (function($) {
-  var bindEvents, catchDom, dom, fnEvents, init, st, stForm, startAction;
+Footballer = (function($) {
+  var bindEvents, catchDom, dom, fnEvents, init, st, stForm;
   st = {
-    'formRegister': '#register'
+    'formSearch': '#formSearch',
+    'txtSearch': '#txtSearch',
+    'btnSearch': '#btnSearch',
+    'results': '.results'
   };
   dom = {};
   stForm = {
@@ -33,13 +36,31 @@ Skeletor = (function($) {
     }
   };
   catchDom = function() {
-    dom.formRegister = $(st.formRegister);
+    dom.formSearch = $(st.formSearch);
+    dom.txtSearch = $(st.txtSearch);
+    dom.btnSearch = $(st.btnSearch);
+    dom.results = $(st.results);
   };
   bindEvents = function() {
-    dom.formRegister.validate(stForm);
+    dom.btnSearch.on('click', fnEvents.searchFootballer);
   };
-  fnEvents = startAction = function() {
-    console.log('show the code');
+  fnEvents = {
+    searchFootballer: function(event) {
+      var valueTxtSearch;
+      event.preventDefault();
+      valueTxtSearch = dom.txtSearch.val();
+      $.ajax({
+        'method': 'get',
+        'url': 'http://127.0.0.1:4000/search/' + valueTxtSearch,
+        'success': function(data) {
+          console.log(data);
+          dom.results.html('<div class="footballer"><img class="photo" with="200" height="300" src="' + data.photo + '"><span class="name">' + data.name + ' ' + data.surname + '</span></div>');
+        },
+        'error': function(error) {
+          console.log(error);
+        }
+      });
+    }
   };
   init = function() {
     catchDom();
@@ -51,5 +72,6 @@ Skeletor = (function($) {
 })(jQuery);
 
 $(function() {
-  return Skeletor.init();
+  Footballer.init();
+  return console.log('333asdasd');
 });
