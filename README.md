@@ -75,4 +75,5 @@ http://localhost:4000/country/:name
 - [mongoose](https://github.com/Automattic/mongoose)
 - [robomongo](http://robomongo.org/)
 - [instalar mongodb en mac](http://www.mkyong.com/mongodb/how-to-install-mongodb-on-mac-os-x/)
+- [probar el REST con Postman](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm/related)
 

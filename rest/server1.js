@@ -108,18 +108,22 @@ countryCollection = {
         }
     ],
     'uruguay' : [
-        'id' : '004',        
-        'name' : 'luis',
-        'surname' : 'suarez',
-        'size' : '170 cm',
-        'weight' : '71 kg'
+        {
+            'id' : '004',        
+            'name' : 'luis',
+            'surname' : 'suarez',
+            'size' : '170 cm',
+            'weight' : '71 kg'
+        }
     ],
     'brasil' : [
-        'id' : '003',        
-        'name' : 'neymar',
-        'surname' : 'da Silva',
-        'size' : '171 cm',
-        'weight' : '73 kg'
+        {
+            'id' : '003',        
+            'name' : 'neymar',
+            'surname' : 'da Silva',
+            'size' : '171 cm',
+            'weight' : '73 kg'
+        }
     ]
 } 
 
@@ -156,7 +160,7 @@ app.delete('/search/:name', function(request, response){
 
 
 app.get('/footballer/:id',function(request, response){
-    response.json(countryCollection[request.params.id]);
+    response.json(dataIdCollection[request.params.id]);
 });
 
 app.get('/country/',function(request, response){
@@ -166,9 +170,9 @@ app.get('/country/',function(request, response){
 app.get('/country/:name',function(request, response){
     var name = request.params.name;
     name = name.toLowerCase();
-    var countryData = dataIdCollection[name];
+    var countryData = countryCollection[name];
     if(!countryData){
-        response.status(404).json('No encontramos al jugador '+ request.params.name);
+        response.status(404).json('No encontramos el pais '+ request.params.name);
     }else{
         response.json(countryData);
     }
@@ -176,6 +180,6 @@ app.get('/country/:name',function(request, response){
 
 
 app.listen('4000',function(){
-	console.log('Server Rest Start in '+ app.address().port);
+	console.log('Server Rest Start');
 });
 
