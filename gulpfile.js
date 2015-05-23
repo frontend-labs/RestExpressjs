@@ -131,3 +131,5 @@ gulp.task('js',['coffee','concatjs']);
 gulp.task('default', function () {
   runSequence(['jade','coffee','stylus']);
 });
+
+module.exports = gulp;

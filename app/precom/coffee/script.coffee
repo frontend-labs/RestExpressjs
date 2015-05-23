@@ -37,7 +37,7 @@ Footballer = (($)->
 			valueTxtSearch = dom.txtSearch.val()
 			$.ajax(
 				'method' : 'get'
-				'url' : 'http://127.0.0.1:4000/search/'+valueTxtSearch
+				'url' : 'http://localhost:4000/search/'+valueTxtSearch
 				'success' : (data)->
 					console.log(data)
 					dom.results.html('<div class="footballer"><img class="photo" with="200" height="300" src="'+data.photo+'"><span class="name">'+data.name+' '+data.surname+'</span></div>')
@@ -56,5 +56,4 @@ Footballer = (($)->
 
 $(->
 	Footballer.init()
-	console.log '333asdasd'
 )
