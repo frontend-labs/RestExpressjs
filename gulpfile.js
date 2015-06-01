@@ -1,19 +1,21 @@
 //paquetes
-var gulp = require('gulp'),
-	$ = require('gulp-load-plugins')(),
-	del = require('del'),
-	runSequence = require('run-sequence'),
-	coffee = require('gulp-coffee'),
-	jade = require('gulp-jade'),
-	stylus = require('gulp-stylus'),
-	jeet = require('jeet'),
-	rupture = require('rupture'),
-	gutil = require('gulp-util'),
-	browserSync = require('browser-sync'),
-	spritesmith = require('gulp.spritesmith'),
-	nib = require('nib'),
-	concat = require('gulp-concat'),
-	reload = browserSync.reload;
+'use strict';
+
+var gulp = require('gulp');
+var $ = require('gulp-load-plugins')();
+var del = require('del');
+var runSequence = require('run-sequence');
+var coffee = require('gulp-coffee');
+var jade = require('gulp-jade');
+var stylus = require('gulp-stylus');
+var jeet = require('jeet');
+var rupture = require('rupture');
+var gutil = require('gulp-util');
+var browserSync = require('browser-sync');
+var spritesmith = require('gulp.spritesmith');
+var nib = require('nib');
+var concat = require('gulp-concat');
+var reload = browserSync.reload;
 //rutas
 var path = {
 	jade : 'app/precom/jade/*.jade',
@@ -28,26 +30,26 @@ var path = {
 	img : 'app/img/sprite/*.png',
 	imgSpriteDest : 'app/img/',
 	cssSpriteDest : 'app/precom/stylus/'
-}
+};
 //precompiladores
 gulp.task('jade',function(){
-	gulp.src(path.jade)
+	return gulp.src(path.jade)
 		.pipe(jade({
 			pretty : true
 		}))
-		.pipe(gulp.dest(path.root))
+		.pipe(gulp.dest(path.root));
 });
 
 gulp.task('stylus',function(){
 	return gulp.src(path.stylus)
-				.pipe(stylus({use:[jeet(),rupture(),nib()]}))
-				.pipe(gulp.dest(path.rootCss))
+		.pipe(stylus({use:[jeet(),rupture(),nib()]}))
+		.pipe(gulp.dest(path.rootCss));
 });
 
 gulp.task('coffee',function(){
-	gulp.src(path.coffee)
+	return gulp.src(path.coffee)
 		.pipe(coffee({bare: true})).on('error',gutil.log)
-		.pipe(gulp.dest(path.rootJs))
+		.pipe(gulp.dest(path.rootJs));
 });
 
 //sprites para css
@@ -87,7 +89,7 @@ gulp.task('browserSync',function(){
 		server: {
 			baseDir : [path.root],
 			routes: {
-				"/bower_components": "bower_components"
+				'/bower_components': 'bower_components'
 			}
 		}
 	});
@@ -132,4 +134,4 @@ gulp.task('default', function () {
   runSequence(['jade','coffee','stylus']);
 });
 
-module.exports = gulp;
+//module.exports = gulp;

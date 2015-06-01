@@ -1,3 +1,5 @@
+'use strict';
+
 var Footballer;
 
 Footballer = (function($) {
